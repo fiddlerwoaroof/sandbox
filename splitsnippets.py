@@ -4,6 +4,7 @@ with open(sys.argv[1]) as f:
 	buffer = []
 	for line in f:
 		lline = line.strip()
+		line = line.rstrip()
 		if set(lline) != set(['#']):
 			buffer.append(line)
 		else:
