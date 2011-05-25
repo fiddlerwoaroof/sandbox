@@ -23,7 +23,7 @@ class IterDict(dict):
   def __delitem__(self, name):
     if name in self.keylist:
       del self.keylist[self.keylist.index(name)]
-	dict.__delitem__(self, name)
+    dict.__delitem__(self, name)
 
 
 import itertools
@@ -45,11 +45,11 @@ class PIDmanager(object):
 	def put_task(self, task):
 		pid = self.pid_generator.next()
 		self.queue[pid] = task
-        print pid
+		print pid,
 		if self.tasks == None:
-            self.queue.reset()
+			self.queue.reset()
 			self.tasks = self.queue.keylistiter
-            self.tasks.next()
+			self.tasks.next()
 	@classmethod
 	def run_task(self):
 		if self.tasks != None:
@@ -57,20 +57,20 @@ class PIDmanager(object):
 			task = self.queue[pid]
 			if hasattr(task, '__iter__') and isinstance(task[0], CONT):
 				_, func, args, kwargs, cleanup = task
-                result = []
+				result = []
 				self.queue[pid] = func(*args, **kwargs)
 				cleanup()
-                return self.queue[pid]
+				return self.queue[pid]
 			else:
 				del self.queue[pid]
-                return task
-    @classmethod
-    def run_all(self):
-        try:
-            while 1: self.run_task()
-        except StopIteration:
-            self.queue.reset()
-            self.tasks == None
+				return task
+	@classmethod
+	def run_all(self):
+		try:
+			while 1: self.run_task()
+		except StopIteration:
+			self.queue.reset()
+			self.tasks == None
 
 
 def print_many(gen, total=2000, count=0):
@@ -79,7 +79,7 @@ def print_many(gen, total=2000, count=0):
 		return CONT(), print_many, (gen,), dict(total=total, count=count+1), cleanup
 
 
-def cleanup(): print
+def cleanup(): print '',
 
 
 PIDmanager.put_task( (CONT(), print_many, (itertools.cycle('a'),), dict(total=10), cleanup) )
