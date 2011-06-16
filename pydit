@@ -1,4 +1,4 @@
-#!/usr/bin/python -OS
+#!/usr/bin/python -O
 import os
 import os.path
 import sys

@@ -1,4 +1,4 @@
-import jsonrpc.jsonutil
+import <module>
 import unittest
 
 class TestSequenceFunctions(unittest.TestCase):
