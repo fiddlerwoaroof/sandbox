@@ -6,3 +6,6 @@
 - [lazy_attributes.py](lazy_attributes.py) a python class for lazy loading attributes
 - [memoize_and_partialfuncs.py](memoize_and_partialfuncs.py) a python implementation of memoization and piecewise definition of functions
 - [piecewise_function.py](piecewise_function.py) a better implementation of piecewise functions
+
+
+All code is under the Apache Licence 2.0
