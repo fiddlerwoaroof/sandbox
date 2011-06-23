@@ -1,0 +1,15 @@
+#!/usr/bin/python -O
+import os
+import os.path
+import sys
+import imp
+
+module = sys.argv[1].split('.')
+module[0] = imp.find_module(module[0])[1]
+try:
+	filename = reduce(lambda a,b: imp.find_module(b, [a])[1], module)
+except ImportError:
+	filename = reduce(lambda a,b: imp.find_module(b, [a])[1], module[:-1])
+
+print filename
+
