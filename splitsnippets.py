@@ -1,3 +1,7 @@
+"""
+Split a file of python snippets into its constituent snippets, splitting
+on lines whose first non-whitespace character is #
+"""
 import sys
 counter = 0
 with open(sys.argv[1]) as f:
