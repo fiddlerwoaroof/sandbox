@@ -1,5 +1,9 @@
 #!/usr/bin/env python -O
-"""Edit a python file"""
+"""
+Edit a python file by its module name (i.e. twisted.internet.thread)
+I usually alias this to some one character symbol like ,
+"""
+
 import os
 import os.path
 import sys
