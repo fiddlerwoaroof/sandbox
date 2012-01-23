@@ -1,4 +1,5 @@
 #!/usr/bin/python -O
+"""Print the path to a python module"""
 import os
 import os.path
 import sys

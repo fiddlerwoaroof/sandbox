@@ -1,0 +1,26 @@
+a:
+- 1
+- 2
+- 3
+- {a: 423, t: 5, y: 6, z: 5}
+- 7
+b: 1
+c: asdasd
+d:
+  e:
+    f: 1
+    g: [1, 2, 3]
+    h: asdasd
+  f: 3
+  g: 1234
+e: asgdsfds
+g: asdasd
+m: asgdsfds
+t: 1
+v:
+  g: 1234
+  l:
+    p: 1
+    s: [1, 2, 3]
+    y: asdasd
+  y: 3

@@ -1,0 +1,17 @@
+a:
+   - 1
+   - 2
+   - 3
+   - d: 5
+     e: 6
+   - 7
+b: 1
+c: "asdasd"
+d:
+   e: 
+      f: 1
+      g: [1,2,3]
+      h: "asdasd"
+   f: 3
+   g: 1234
+e: "asgdsfds"
