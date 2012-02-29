@@ -19,10 +19,14 @@ for line in a:
 	out = []
 	for window in window_iterate(line):
 		if window[0] in set(['a', 'an']):
-			if any(window[1].startswith(vowel) for vowel in 'aeiouh'):
-				window[0] = 'an'
+			if any(window[1].startswith(vowel) for vowel in 'aeiou'):
+				if window[0] != 'an':
+					if raw_input('change article in %r? ' % ' '.join(window)).lower().startswith('y'):
+						window[0] = 'an'
 			else:
-				window[0] = 'a'
+				if window[0] != 'a':
+					if raw_input('change article in %r? ' % ' '.join(window)).lower().startswith('y'):
+						window[0] = 'a'
 		out.append(window[0])
 	print(' '.join(out))
 
