@@ -1,0 +1,28 @@
+#!/usr/bin/python
+
+import fileinput
+
+a = fileinput.FileInput()
+
+def window_iterate(sequence, width=2, begin=0):
+	while begin < len(sequence):
+		result = sequence[begin:begin+width]
+
+		while len(result) < width: result.append('')
+
+		yield result
+		begin += 1
+
+for line in a:
+	line = line.split()
+
+	out = []
+	for window in window_iterate(line):
+		if window[0] in set(['a', 'an']):
+			if any(window[1].startswith(vowel) for vowel in 'aeiouh'):
+				window[0] = 'an'
+			else:
+				window[0] = 'a'
+		out.append(window[0])
+	print(' '.join(out))
+
