@@ -66,10 +66,10 @@ except:
             <cleanup>
 
     """
-    @functools.wraps(func)
-    def helper(*args, **kwds):
-        return CallableGeneratorContextManager(func(*args, **kwds))
-    return helper
+		@functools.wraps(func)
+		def helper(*args, **kwds):
+			return CallableGeneratorContextManager(func(*args, **kwds))
+		return helper
 
 
 class RegisteredObj(object):
@@ -166,9 +166,9 @@ if __name__ == '__main__':
 
 	import random
 	def shuffled(lis):
-		lis = lis[:]
-		random.shuffle(lis)
-		return iter(lis)
+	lis = lis[:]
+	random.shuffle(lis)
+	return iter(lis)
 
 
 	for obj_name in shuffled(['first_obj', 'second_obj', 'third_obj']):
